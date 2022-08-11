@@ -1,0 +1,8 @@
+## COMMANDS FOR PIP
+
+pip search <package-name>		: Search a package
+pip install <package-name>		: Install a package
+pip show <package-name>			: Show details of package instaled
+pip unistall <package-name>		: Unistall a package
+pip list				: Return a list with packages instaled on actual virtual enviroment
+pip freeze				: Freez the packages and actual version
