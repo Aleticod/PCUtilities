@@ -20,8 +20,11 @@ git reset <commit_ID> --hard    	: Return to the <commit_ID> version project del
 git reset HEAD <file>			: Unstage the untracked file from stage
 git reset HEAD                  	: Unstage all files from stage
 git checkout -- <file>			: Restore the file from stage to last commit file
-git checkout <commit_ID> <file> 	: Return to the specific state <commit_ID> of <file> without deleted the commits
-git checkout main <file>        	: Return to the state of last commit of <file> on branch main
+git checkout <commit_ID> <file> 	: HEAD move to the specific <commit_ID> of <file> without deleted the commits and "main" point to last commit
+git checkout main <file>        	: HEAD move to the state of last commit of <file> on branch main
+git checkout <commit_ID>		: HEAD move to the specific <commit_ID> without deleted the commits and "main" point to last commit
+git checkout - 				: Move HEAD to last commit
+git log --oneline --all			: Show all commits
 git log --graph --oneline --decorate
 git branch <branch_name>        	: Create a new branch
 git checkout <branch_name>      	: Turn the branch to <branch_name>
