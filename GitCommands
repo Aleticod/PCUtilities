@@ -27,6 +27,16 @@ git checkout - 				: Move HEAD to last commit
 git log --oneline --all			: Show all commits
 git log --graph --oneline --decorate
 git branch <branch_name>        	: Create a new branch
+git checkout -b <branch_name>		: Create a new branch and turn to this branch
 git checkout <branch_name>      	: Turn the branch to <branch_name>
 git merge <branch_name>         	: Merge the <branch_name> to the current branch
+git push <to(origin)> <from(branch)>	: Send last commits from actual branch to remote repository (origin)
+git pull <from(origin)> <to(branch)>	: Recive last commits from remote repository (origin) to the actual branch
+git branch -D <branch_name>		: Delete the branch locally
 
+
+GENERATING A NEW SSH KEY
+ssh-keygen -t ed25519 -C "email"	: Change email to your email
+ssh-keygen -t rsa -b 4096 -C "email"	: If you're using a legacy system that doesn't suport the Ed25519 algorithm
+eval "$(ssh-agent -s)"			: Init the ssh agent on the background and show like this > Agent pid 59566
+ssh-add ~/.ssh/id_ed25519		: Add your ssh private key to the ssh-agent and add your public-key to github 
