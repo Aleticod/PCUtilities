@@ -1,27 +1,42 @@
-sudo apt install git    : Install git
-git status              : Show the status of local repository
-git show                : Show all history changes between last commits
-git log <file>          : Show commits history of file_name
-git log --stat          : Show the length of changes in bytes
-git rm --cached <file>  : Delete the <file> from git move to  (Untracked) filesbut the changes is not deleted
-git rm --force <file>   : Delete the <file> from git and hard disk. The file is deleted 
-git restore --staged <file> : Unstage the file form stage
-git restore <file>      : Discard changes in working directory, delete changes from the last commit
-git config --list       : List the configuration of git repository
-git config --list --show-origin : Location where the configuratios are save or store
-git config --global user.name "name" : Config the name for all users in this PC
-git config user.name "name" : Config the name just for this repository (local form)
+sudo apt install git 			: Install git
+git status              		: Show the status of local repository
+git show                		: Show all history changes between last commits
+git log <file>          		: Show commits history of file_name
+git log --stat          		: Show the length of changes in bytes
+git rm --cached <file>  		: Delete the <file> from git move to  (Untracked) filesbut the changes is not deleted
+git rm --force <file>   		: Delete the <file> from git and hard disk. The file is deleted 
+git restore --staged <file> 		: Unstage the file from stage
+git restore <file>      		: Discard changes in working directory, delete changes from the last commit
+git config --list       		: List the configuration of git repository
+git config --list --show-origin 	: Location where the configuratios are save or store
+git config --global user.name "name" 	: Config the name for all users in this PC
+git config user.name "name" 		: Config the name just for this repository (local form)
 git config --global user.email "email"
 git config user.email "email"
-git diff <commit_ID> <commit_ID> : Show differences between two commits
-git reset <commit_ID> --soft    : Return to the <commit_ID> version project deleted the last commits but staging area is conserved
-git reset <commit_ID> --mixed   :
-git reset <commit_ID> --hard    : Return to the <commit_ID> version project deleted the last commits and staging area
-git reset HEAD                  : Unstage the file from staget
-git checkout <commit_ID> <file> : Return to the specific state <commit_ID> of <file> without deleted the commits
-git checkout main <file>        : Return to the state of last commit of <file> on branch main
+git diff <commit_ID> <commit_ID> 	: Show differences between two commits
+git reset <commit_ID> --soft    	: Return to the <commit_ID> version project deleted the last commits but staging area is conserved
+git reset <commit_ID> --mixed   	:
+git reset <commit_ID> --hard    	: Return to the <commit_ID> version project deleted the last commits and staging area
+git reset HEAD <file>			: Unstage the untracked file from stage
+git reset HEAD                  	: Unstage all files from stage
+git checkout -- <file>			: Restore the file from stage to last commit file
+git checkout <commit_ID> <file> 	: HEAD move to the specific <commit_ID> of <file> without deleted the commits and "main" point to last commit
+git checkout main <file>        	: HEAD move to the state of last commit of <file> on branch main
+git checkout <commit_ID>		: HEAD move to the specific <commit_ID> without deleted the commits and "main" point to last commit
+git checkout - 				: Move HEAD to last commit
+git log --oneline --all			: Show all commits
 git log --graph --oneline --decorate
-git branch <branch_name>        : Create a new branch
-git checkout <branch_name>      : Turn the branch to <branch_name>
-git merge <branch_name>         : Merge the <branch_name> to the current branch
+git branch <branch_name>        	: Create a new branch
+git checkout -b <branch_name>		: Create a new branch and turn to this branch
+git checkout <branch_name>      	: Turn the branch to <branch_name>
+git merge <branch_name>         	: Merge the <branch_name> to the current branch
+git push <to(origin)> <from(branch)>	: Send last commits from actual branch to remote repository (origin)
+git pull <from(origin)> <to(branch)>	: Recive last commits from remote repository (origin) to the actual branch
+git branch -D <branch_name>		: Delete the branch locally
 
+
+GENERATING A NEW SSH KEY
+ssh-keygen -t ed25519 -C "email"	: Change email to your email
+ssh-keygen -t rsa -b 4096 -C "email"	: If you're using a legacy system that doesn't suport the Ed25519 algorithm
+eval "$(ssh-agent -s)"			: Init the ssh agent on the background and show like this > Agent pid 59566
+ssh-add ~/.ssh/id_ed25519		: Add your ssh private key to the ssh-agent and add your public-key to github 
