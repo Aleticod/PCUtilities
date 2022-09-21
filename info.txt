@@ -1,9 +1,9 @@
 Purpose: This is a Example Course
-Author: you name
+Author: your name
 Creation Date: current date
 Physical Machine: PC0X
 Virtual Machine: virtual machine name
-Git: user.name = your name, user.email = your email
+Git: user.name = "your name", user.email = "your email"
 GitHub: prfile name, repository url
 Colaborator or Author: select one
 Fork or clone: yes or not
