@@ -6,3 +6,7 @@ pip show <package-name>			: Show details of package instaled
 pip unistall <package-name>		: Unistall a package
 pip list				: Return a list with packages instaled on actual virtual enviroment
 pip freeze				: Freez the packages and actual version
+
+## PIP PACKAGES
+pip install jupyterthemes		: Themes for jupyter notebook
+pip install jupyter_contrib_nbextensions: Extensions for jupyter notebook
