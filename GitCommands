@@ -19,6 +19,12 @@ git config --global core.editor <editor>: Configure edito to use git
 git help <verb>				: Help for a specific verb (open on a browser)
 git <verb> --help			: Help for a specific verb (open on a browser)
 man git-<verb>				: Help for a specific verb open on a terminal
+---- GET A GIT REPOSITORY ----
+git init				: Initialize a empty repository into the project
+git add <files>				: Add the files to get follow for git
+git commit -m "message" 		: Confirm the canges
+git clone <url>				: Clone a repository from url with default name of repository
+git clone <url> <name>			: Clone a repository form url with specific directory name
 	
 git status              		: Show the status of local repository
 git show                		: Show all history changes between last commits
