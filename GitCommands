@@ -6,6 +6,15 @@ git config --system <tag>		: Configure for all users and repositories (/etc/gitc
 git config --system --list		: List configuration for all users and repositories (/etc/gitconfig)
 git config --global <tag>		: Configure for specific user (~/.gitconfig ~/.config/git/config)
 git config --global --list		: List configuration for specific user
+git config --list			: List all properties configureted by user
+git config <key>			: Value of the git use for specific key (user.name)
+---- IDENTITY -----
+git config --global user.name "name"	: Configure the user name for all repositories
+git config --global user.email <email>	: Configure the user email for all repostories		
+git config user.name "name"		: Configure the user name for specific project
+git config user.email <email>		: Configure the user email for specific project
+---- EDITOR -----
+git config --global core.editor <editor>: Configure edito to use git
 
 git status              		: Show the status of local repository
 git show                		: Show all history changes between last commits
