@@ -1,5 +1,12 @@
+---- INSTALATION LINUX -----
 sudo apt install git 			: Install git on debina based system
 sudo yum install git			: Install git on fedora
+---- CONFIGURATION -----
+git config --system <tag>		: Configure for all users and repositories (/etc/gitconfig)
+git config --system --list		: List configuration for all users and repositories (/etc/gitconfig)
+git config --global <tag>		: Configure for specific user (~/.gitconfig ~/.config/git/config)
+git config --global --list		: List configuration for specific user
+
 git status              		: Show the status of local repository
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
