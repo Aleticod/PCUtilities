@@ -1,4 +1,5 @@
-sudo apt install git 			: Install git
+sudo apt install git 			: Install git on debina based system
+sudo yum install git			: Install git on fedora
 git status              		: Show the status of local repository
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
