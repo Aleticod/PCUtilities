@@ -15,7 +15,11 @@ git config user.name "name"		: Configure the user name for specific project
 git config user.email <email>		: Configure the user email for specific project
 ---- EDITOR -----
 git config --global core.editor <editor>: Configure edito to use git
-
+---- HELP -----
+git help <verb>				: Help for a specific verb (open on a browser)
+git <verb> --help			: Help for a specific verb (open on a browser)
+man git-<verb>				: Help for a specific verb open on a terminal
+	
 git status              		: Show the status of local repository
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
