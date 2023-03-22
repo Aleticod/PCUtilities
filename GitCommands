@@ -113,10 +113,24 @@ git ocnfig --global pull.rebase "true"
 git push <remote> <branch>		: Push your branch to remote server
 git remote show <remote>		: See information about a pariticular remote
 git remote rename <name-from> <name-to>	: Change a remote's shortname
-git remote remove <remote>		: Remove a remote server (remote directory)
+git remote remove (rm) <remote>		: Remove a remote server (remote directory)
 
-
-
+---- TAGGING ----
+git tag					: Listing the existing tags in alphabetical orden
+git tag --list (-l)			: Listing the existing tags in alphabetical orden
+git tag -l "v1.8.5*"			: Search for tags that match in particular pattern
+git tag -a <tag> -m <message-tag>	: Creating a annoted tag with a message, it is created in the las commit
+git show <tag>				: See the tag data along with the commit that was tagged
+git tag <tag>				: Creating a lightweight tag
+git show <tag>				: Just show the commit information
+git tag -a <tag> <checksum-commit>	: Tagging commit after you have move past them
+git push <remote> <tagname>		: Sharing a tag into remote server, for default push doesn't transfer tags
+git push <remote> --tags		: Transfer all the tags to the remote server
+git tag -d <tagname>			: Deleting a tag on your local repository
+git push <remote> :refs/tags/<tagname>	: Removing the tag from any remote servers
+git push <remote> --delete <tagname>	: Removing the tag from any remote servers
+git checkout <tagname>			: View the verion of the files a tag is pointing
+git checkout -b <branch-name> <tagname>	: Create a branch from specific version point
 
 
 
