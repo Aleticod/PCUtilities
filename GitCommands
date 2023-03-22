@@ -132,6 +132,13 @@ git push <remote> --delete <tagname>	: Removing the tag from any remote servers
 git checkout <tagname>			: View the verion of the files a tag is pointing
 git checkout -b <branch-name> <tagname>	: Create a branch from specific version point
 
+---- ALIASES ----
+git config --global alias.<short> <command>	: Create a partially command from specific command
+git config --global alias.br branch	: Create a alias for branch (git br)
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.visual '!gitk'	: Run an external command, rather than a Git subcommand (git visual = gitk)
+
 
 
 git show                		: Show all history changes between last commits
