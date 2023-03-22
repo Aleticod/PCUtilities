@@ -1,14 +1,20 @@
 ---- INSTALATION LINUX -----
-sudo apt install git 			: Install git on debina based system
-sudo yum install git			: Install git on fedora
+sudo apt install git-all 			: Install git on debina based system
+sudo yum install git-all			: Install git on fedora
+sudo apt install install-info
 
 ---- CONFIGURATION -----
 git config --system <tag>		: Configure for all users and repositories (/etc/gitconfig)
 git config --system --list		: List configuration for all users and repositories (/etc/gitconfig)
 git config --global <tag>		: Configure for specific user (~/.gitconfig ~/.config/git/config)
 git config --global --list		: List configuration for specific user
+git config --local <tag>		: Configure for specific repository (.git/config)
+git config --local --list		: List configuration for specific repository
+git config --list --show-origin		: List setting and where they are coming from using
 git config --list			: List all properties configureted by user
 git config <key>			: Value of the git use for specific key (user.name)
+git config --show-origin <key>
+git config --global init.defaultBranch main	: Set the name of default branch as main
 
 ---- IDENTITY -----
 git config --global user.name "name"	: Configure the user name for all repositories
@@ -21,6 +27,7 @@ git config --global core.editor <editor>: Configure edito to use git
 
 ---- HELP -----
 git help <verb>				: Help for a specific verb (open on a browser)
+git <verb> -h
 git <verb> --help			: Help for a specific verb (open on a browser)
 man git-<verb>				: Help for a specific verb open on a terminal
 
@@ -82,6 +89,11 @@ git log -- <file or directory>		: Show history with filter by file or directory 
 git log --committer=<committer>		: Show history with filter by who made the commit
 git log --pretty="%h - %s" --author=gitster --since="2008-10-01" --before="2008-11-01" --no-merges -- t/
 
+---- UNDO THINGS ----
+git commit --amend			: Undo the last commit and rewrite this commit with changes in stage area (if there are not any changes just change the message of commit, if there are change in stage area add this changes into commit and change the message commit)
+git commit -m "some word"
+git add <forgottern-file>
+git commit --amend
 
 
 git show                		: Show all history changes between last commits
