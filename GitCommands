@@ -35,8 +35,16 @@ git clone <url> <name>			: Clone a repository form url with specific directory n
 git status              		: Show the status of local repository
 git status -s or --short		: Show the compact status (A: file add to track, M left: modified and preparate, M right: modified, ??: file untracked)
 
--- IGNORE FILES ---
+---- IGNORE FILES ----
 touch .gitignore			: Create a new file .gitignore
+
+---- CHANGES ----
+git diff				: Show a compare beetween work directory with staged area files (changes without prepar)
+git diff --staged			: Show a changes prepared, ready to confirm
+git diff --cached			: Show a changes prepared, ready to confirm
+git difftool				: Show a interface grafic to show changes of git diff
+git difftool --staged			: Show a interface grafic to show changes of git diff --staged
+git difftool --tool-help		: Show a availabled program to show grafical diff
 
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
