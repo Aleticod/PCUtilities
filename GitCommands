@@ -61,6 +61,27 @@ git rm <regular-expresio>		: Delete files, directries with regular expresions
 ---- CHANGE FILES NAMES ----
 git mv <file-from> <file-to>		: Change the file name and put into stage area with renamed tag
 
+---- HISTORY COMMIT ----
+git log					: Show the history of commits
+git log -p				: Show the history of commits with entry diferences in each commit
+git log -<n>				: Show the last n history commits  
+git log --stat				: Show the history with statistic imformation (lines insert or delete)
+git log --shortstat			: Show the history with short statistic
+git log --name-only			: Show the files names modifies in this commit
+git log --name-status			: Show the files names modifies in this commit and status (A, M, D, R)
+git log --abbrev-commit			: Show the history with the first caracters of the SHA-1
+git log --relative-date			: Show date in relative format (2 weeks ago)
+git log --pretty=(online, short, full, fuller)	: Show the history in a specific format
+git log --pretty=format:"%h - %an, %ar : %s"	: Show the history in a personalize format
+git log --pretty=format:"%h %s" --graph	: Show the history with personalize format and ASCII graph
+git log --since=<n>.weeks		: Show history from <n> last weeks ("2008-01-15", "2 years 1 day 3 minutes ago") (--unit, --before , --after)
+git log --author=<author>		: Show history with filter by author name
+git log --grep=<key-word>		: Show history with filter by key-word into commit message (more than one filter add --all-match to match with two)
+git log -S <string>			: Show history with filter by chage code adding or deleting this string
+git log -- <file or directory>		: Show history with filter by file or directory (this should be the last option and precedent with -- )
+git log --committer=<committer>		: Show history with filter by who made the commit
+git log --pretty="%h - %s" --author=gitster --since="2008-10-01" --before="2008-11-01" --no-merges -- t/
+
 
 
 git show                		: Show all history changes between last commits
