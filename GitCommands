@@ -49,8 +49,13 @@ git difftool --tool-help		: Show a availabled program to show grafical diff
 ---- CONFIRM CHANGES ----
 git commit				: Start the preference editor to put a message of commit
 git commit -v				: Start the preference editor with diff content to put a message
-git commit -m "message			: Confirm changes with a message 
+git commit -m "message"			: Confirm changes that are into staged area with a message 
+git commit -a -m "message"		: Confirm changes directly of all tracked file modified with a message
 
+---- DELETE FILES ----
+git rm <file>				: Delete a file from repository and work directory and add to stage area to be confirm
+git rm -f <file>			: Force delete a file with changes from stage area or not
+git rm --cached <file>			: Delete a file form repository without delete from work directory 
 
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
