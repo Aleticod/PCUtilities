@@ -101,6 +101,18 @@ git checkout -- <file>			: Unmodify a modified file, revert it back to what it l
 git restore --staged <file>		: Unstage from stage area
 git restore <file>			: Unmodify a modified file, replace that file with the last staged or committed version
 
+---- REMOTE REPOSITORY ----
+git remote				: Show shortnames of each remote (origin is the default name git gives to the server you clone from)
+git remote -v				: Show the URL that git has stored for the shortname to be used
+git remote add <shortname> <url>	: Add a new remote git repository as a shortname
+git fetch <remote>			: Get data from remote project, gell all branches from remote. It doesnt autamatically merge it with any of your work or modify what you are currently working
+git pull <remote>			: Fetch and merge automatically the remote branch into your current branch
+git clone <url>				: Automatically sets up your local master branch to track the remote master branch
+git config --global pull.rebase "false"
+git ocnfig --global pull.rebase "true"
+
+
+
 
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
