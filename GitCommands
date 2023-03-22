@@ -111,6 +111,11 @@ git clone <url>				: Automatically sets up your local master branch to track the
 git config --global pull.rebase "false"
 git ocnfig --global pull.rebase "true"
 git push <remote> <branch>		: Push your branch to remote server
+git remote show <remote>		: See information about a pariticular remote
+git remote rename <name-from> <name-to>	: Change a remote's shortname
+git remote remove <remote>		: Remove a remote server (remote directory)
+
+
 
 
 
