@@ -14,6 +14,7 @@ git config --list --show-origin		: List setting and where they are coming from u
 git config --list			: List all properties configureted by user
 git config <key>			: Value of the git use for specific key (user.name)
 git config --show-origin <key>
+git config --global --show-origin --list
 git config --global init.defaultBranch main	: Set the name of default branch as main
 
 ---- IDENTITY -----
@@ -70,10 +71,11 @@ git mv <file-from> <file-to>		: Change the file name and put into stage area wit
 
 ---- HISTORY COMMIT ----
 git log					: Show the history of commits
-git log -p				: Show the history of commits with entry diferences in each commit
+git log -p (--patch)			: Show the history of commits with entry diferences in each commit
 git log -<n>				: Show the last n history commits  
 git log --stat				: Show the history with statistic imformation (lines insert or delete)
 git log --shortstat			: Show the history with short statistic
+git log --oneline			: Shorthand for --pretty=oneline --abbrev-commit
 git log --name-only			: Show the files names modifies in this commit
 git log --name-status			: Show the files names modifies in this commit and status (A, M, D, R)
 git log --abbrev-commit			: Show the history with the first caracters of the SHA-1
@@ -94,6 +96,10 @@ git commit --amend			: Undo the last commit and rewrite this commit with changes
 git commit -m "some word"
 git add <forgottern-file>
 git commit --amend
+git reset HEAD <file>			: Unstage from stage area
+git checkout -- <file>			: Unmodify a modified file, revert it back to what it looked like last commit, disckar changes in working directory, replaced that with the last staged or committed version
+git restore --staged <file>		: Unstage from stage area
+git restore <file>			: Unmodify a modified file, replace that file with the last staged or committed version
 
 
 git show                		: Show all history changes between last commits
