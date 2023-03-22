@@ -56,6 +56,12 @@ git commit -a -m "message"		: Confirm changes directly of all tracked file modif
 git rm <file>				: Delete a file from repository and work directory and add to stage area to be confirm
 git rm -f <file>			: Force delete a file with changes from stage area or not
 git rm --cached <file>			: Delete a file form repository without delete from work directory 
+git rm <regular-expresio>		: Delete files, directries with regular expresions
+
+---- CHANGE FILES NAMES ----
+git mv <file-from> <file-to>		: Change the file name and put into stage area with renamed tag
+
+
 
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
