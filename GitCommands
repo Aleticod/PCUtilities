@@ -170,8 +170,11 @@ git remote show <remote>		: Remote branches as well as more information
 <remote>/<branch>			: Remote-tracking branch
 git clone -o <remote-name> <url>	: Change the remote server name and the default remote branch will be <remote-name>/master
 git fetch <remote>			: Synchronize with remote server, fetches any data and updates the local database, moving <remote>/master pointer (update remote-tracking branche)
-
-
+git push <remote> <branch>		: Push a branch to remote server, (local)refs/head/<branch>:refs/head/<branch>(remote)
+git push <remote> <local-branch>:<remote-branch>	: Push a local-branch to a different remote-branch
+git config --global credential.helper cache	: Keep authentication in memory for a few minutes
+git merge <remote>/<branch>		: Merge the remote-tracking branch into the current local-branch 
+git checkout -b <local-banch> <remote>/<remote-branch>	: Merge the remote-tracking branch into new local-branch (local-branch tack the the remote-branch)
 
 
 git show                		: Show all history changes between last commits
