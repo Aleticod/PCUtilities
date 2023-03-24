@@ -109,7 +109,7 @@ git fetch <remote>			: Get data from remote project, gell all branches from remo
 git pull <remote>			: Fetch and merge automatically the remote branch into your current branch
 git clone <url>				: Automatically sets up your local master branch to track the remote master branch
 git config --global pull.rebase "false"
-git ocnfig --global pull.rebase "true"
+git config --global pull.rebase "true"
 git push <remote> <branch>		: Push your branch to remote server
 git remote show <remote>		: See information about a pariticular remote
 git remote rename <name-from> <name-to>	: Change a remote's shortname
@@ -164,6 +164,12 @@ git push --set-upstream <remote> <name-to>	: Update the name changed in remote r
 git branch --all			: List all branches (local and remote branches)
 git push origin --delete <name-from>	: Delete the bad name on the remote repository
 
+---- REMOTE BRANCHES ----
+git ls-remote <remote>			: Get a full list of remote references (branch, tags)
+git remote show <remote>		: Remote branches as well as more information
+<remote>/<branch>			: Remote-tracking branch
+git clone -o <remote-name> <url>	: Change the remote server name and the default remote branch will be <remote-name>/master
+git fetch <remote>			: Synchronize with remote server, fetches any data and updates the local database, moving <remote>/master pointer (update remote-tracking branche)
 
 
 
