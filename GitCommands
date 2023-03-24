@@ -192,6 +192,15 @@ git pull				: Verify if current local branch is tracking an upstream branch, and
 ---- DELETING REMOTE BRANCHES ----
 git push origin --delete <remote-branch>	: Delete remote branch from the server, this just remove the pointer from the server
 
+---- REBASING ----
+git rebase <branch>			: Rebase current branch onto <branch>
+git merge <branch>			: Then checkout to the other branch and merge fast-forwward to rebase branch
+git rebase --onto <stable-branch> <topic-branc> <current-branch>	: Rebase topic branches
+git rebase <stable-branch> <current-branch>	: Rebase the current branch onto to stable branch
+git pull --rebase			: Make first fetch on the upstream branch and then make a rebase from current local branch onto upstream branch (git fetch <remote> and then git rebase <remote>/<remote-branch>)
+git config --global pull.rebase true	: Default (git pull) is like (git pull --rebase)
+
+
 
 
 git show                		: Show all history changes between last commits
