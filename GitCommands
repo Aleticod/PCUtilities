@@ -189,6 +189,11 @@ git fetch --all				: Fetch all the remote servers
 ---- PULLING ----
 git pull				: Verify if current local branch is tracking an upstream branch, and then fetch all data from the server to upstream branch and then try to merge upstream branch into current local branch (tracking branch)
 
+---- DELETING REMOTE BRANCHES ----
+git push origin --delete <remote-branch>	: Delete remote branch from the server, this just remove the pointer from the server
+
+
+
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
 git log --stat          		: Show the length of changes in bytes
