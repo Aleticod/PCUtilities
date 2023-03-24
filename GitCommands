@@ -169,7 +169,7 @@ git ls-remote <remote>			: Get a full list of remote references (branch, tags)
 git remote show <remote>		: Remote branches as well as more information
 <remote>/<branch>			: Remote-tracking branch
 git clone -o <remote-name> <url>	: Change the remote server name and the default remote branch will be <remote-name>/master
-git fetch <remote>			: Synchronize with remote server, fetches any data and updates the local database, moving <remote>/master pointer (update remote-tracking branche)
+git fetch <remote>			: Synchronize with remote server, fetches any data and updates the local database, moving <remote>/master pointer (update remote-tracking branche) don't modify the working directory
 git push <remote> <branch>		: Push a branch to remote server, (local)refs/head/<branch>:refs/head/<branch>(remote)
 git push <remote> <local-branch>:<remote-branch>	: Push a local-branch to a different remote-branch
 git config --global credential.helper cache	: Keep authentication in memory for a few minutes
@@ -186,7 +186,8 @@ git merge @{u}				: Merge the upstream branch into tracking branch (remote-track
 git branch -vv				: Show local branches with information what each branch is tracking and if local branch is ahead, behind or both
 git fetch --all				: Fetch all the remote servers
 
-
+---- PULLING ----
+git pull				: Verify if current local branch is tracking an upstream branch, and then fetch all data from the server to upstream branch and then try to merge upstream branch into current local branch (tracking branch)
 
 git show                		: Show all history changes between last commits
 git log <file>          		: Show commits history of file_name
