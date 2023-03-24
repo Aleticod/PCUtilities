@@ -174,7 +174,18 @@ git push <remote> <branch>		: Push a branch to remote server, (local)refs/head/<
 git push <remote> <local-branch>:<remote-branch>	: Push a local-branch to a different remote-branch
 git config --global credential.helper cache	: Keep authentication in memory for a few minutes
 git merge <remote>/<branch>		: Merge the remote-tracking branch into the current local-branch 
-git checkout -b <local-banch> <remote>/<remote-branch>	: Merge the remote-tracking branch into new local-branch (local-branch tack the the remote-branch)
+git checkout -b <local-branch> <remote>/<remote-branch>	: Merge the remote-tracking branch into new local-branch (local-branch tack the the remote-branch)
+
+---- TRACKING BRANCHES ----
+git checkout -b <local-branch> <remote>/<remote-branch>	: Automatically creates a "tracking branch" that tracks to remote-branch (upsream branch) generally the local branch is the same of the remote branch
+git checkout --track <remote>/<remote-branche>	: Create a new tracking branch to tack the remote branch (This create new local branch called the same name of remote-branch)
+git checkout <local-branch>		: Create a tracking branch if doesn't and exactly matches a name on only one remote <remote>/<local-branch>
+git branch --set-upstream-to (-u) <remote>/<remote-branch>	: The current local branch is set to track <remote>/<remote-branch> (upstream branch) 
+When local branch track a remote branch our local branch is called trancking branch and the remote branch is called upstream branch. Now to refer the upstream branch it can with @{upstream} or @{u}
+git merge @{u}				: Merge the upstream branch into tracking branch (remote-tracking branch is merge into local-branch)
+git branch -vv				: Show local branches with information what each branch is tracking and if local branch is ahead, behind or both
+git fetch --all				: Fetch all the remote servers
+
 
 
 git show                		: Show all history changes between last commits
