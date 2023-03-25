@@ -200,6 +200,52 @@ git rebase <stable-branch> <current-branch>	: Rebase the current branch onto to 
 git pull --rebase			: Make first fetch on the upstream branch and then make a rebase from current local branch onto upstream branch (git fetch <remote> and then git rebase <remote>/<remote-branch>)
 git config --global pull.rebase true	: Default (git pull) is like (git pull --rebase)
 
+---- GETTING GIT ON A SERVER ----
+git clone --bare <path-project> <project-name>.git	: Create a new bare repository (doesn't contain a working directory) "local"
+cp -Rf <path-project>/.git <project-name>.git	: Copy of the git directory data in <project-name>.git directory "local"
+scp -r <project-name>.git user@git.example.com:/srv/git	: Send git local bare repo to server. Store the git repository into /srv/git (The server is called git.exmaple.com) (server harveyphd@192.168.82.41)
+git clone user@git.example.com:/srv/git/<project-name>.git	: Clone the repository by other users who have SSH access /srv/git on that server
+ssh user@git.example.com		: Conection to the server
+cd /srv/git/<project-name>.git		: Change directory to <project-name>.git
+git init --bare --shared		: Git will add group write permissions
+ssh-keygen -o				: Create a rsa keys
+## Server administrator ##
+sudo adduser git			: Create a new user called git in server
+su git					: Change to git user
+cd					: Move to home directory for git user
+mkdir .ssh && chmod 700 .ssh		: Create a .ssh directory and change permitions 700 to .ssh directory
+touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys	: Create authorized_keys file and change mode
+cat /tmp/id_rsa.john.pub >> ~/.ssh/authorized_keys	: Append john public key to authorized_keys
+cat /tmp/id_rsa.juan.pub >> ~/.ssh/authorized_keys	: Append juan public key to authorized_keys
+## Create a bare repository on the server ##
+cd /srv/git				: Move to git directory where are all the respositories
+mkdir project.git			: Create a directory for new repository
+cd project.git				: Move into git repository
+git init --bare				: Initialize the repository without working directory
+## On Jhon's computer ##			: Example for use a remote repository to pull and push
+cd project
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin git@192.168.1.4:/srv/git/project.git
+git push origin master
+## Other user #				: Example for other user that has a access ssh to server
+git clone git@192.168.1.4:/srv/git/project.git
+cd project
+vim README
+git commit -am "Fix README file"
+git push origin master
+## Restric to git user ##
+cat /etc/shells				: See if git-shell is already in there. If not...
+which git-shell				: Make sure git-shell is installed on the system
+sudo -e /etc/shells			: Open editor and add path to git-shell from last command
+sudo chsh git -s $(which git-shell)	: Change the shell for a git user
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty	: The user public key should init with this line like this (for each user)
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AASdf2342asdfasd...
+
+
+
+
 
 
 
