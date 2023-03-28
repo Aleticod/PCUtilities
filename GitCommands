@@ -171,6 +171,8 @@ git remote show <remote>		: Remote branches as well as more information
 git clone -o <remote-name> <url>	: Change the remote server name and the default remote branch will be <remote-name>/master
 git fetch <remote>			: Synchronize with remote server, fetches any data and updates the local database, moving <remote>/master pointer (update remote-tracking branche) don't modify the working directory
 git push <remote> <branch>		: Push a branch to remote server, (local)refs/head/<branch>:refs/head/<branch>(remote)
+git push -u <remote> <branch>		: Push the work to from and to specific branch, this means (local) <branch> and (remote) remote/<branch> There are two branch (local and remote) with the same name
+git push -u <remote> <local-branch>:<remote-branch>	: Push the work from a local-branch to a differente remote -branch (-u is short for --set-upstream which configures  the branches for easier pushing and pulling later)
 git push <remote> <local-branch>:<remote-branch>	: Push a local-branch to a different remote-branch
 git config --global credential.helper cache	: Keep authentication in memory for a few minutes
 git merge <remote>/<branch>		: Merge the remote-tracking branch into the current local-branch 
@@ -242,6 +244,9 @@ sudo -e /etc/shells			: Open editor and add path to git-shell from last command
 sudo chsh git -s $(which git-shell)	: Change the shell for a git user
 no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty	: The user public key should init with this line like this (for each user)
 no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AASdf2342asdfasd...
+
+---- COMMIT GUIDELINES ----
+git diff --check			: Check if code contains any whitespace error and liste them
 
 
 
