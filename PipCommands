@@ -1,3 +1,12 @@
+## INSTALL PIP
+### Arch linux
+
+sudo pacman -Sy python-pip
+
+## Ubuntu/Debian
+sudp apt install python3-pip
+
+
 ## COMMANDS FOR PIP
 
 pip search <package-name>		: Search a package
