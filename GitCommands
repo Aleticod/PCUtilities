@@ -293,4 +293,7 @@ GENERATING A NEW SSH KEY
 ssh-keygen -t ed25519 -C "email"	: Change email to your email
 ssh-keygen -t rsa -b 4096 -C "email"	: If you're using a legacy system that doesn't suport the Ed25519 algorithm
 eval "$(ssh-agent -s)"			: Init the ssh agent on the background and show like this > Agent pid 59566
-ssh-add ~/.ssh/id_ed25519		: Add your ssh private key to the ssh-agent and add your public-key to github 
+ssh-add ~/.ssh/id_ed25519		: Add your ssh private key to the ssh-agent and add your public-key to github
+
+EXTRA COMMANDS
+git remote set-url origin https://USERNAME:TOKEN@github.com/USER/TUREPOSITORIO.git 
