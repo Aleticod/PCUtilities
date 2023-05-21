@@ -1,0 +1,30 @@
+## Conda
+conda env list		: Show all virtual environments
+conda create --name <env-name>	: Create a new virtual environment
+conda create --name <env-name> <package-name = version>	: Create a new virtual environment with package (python=3.9)
+conda create --name <env-name> <package-name>	: Create a new environment with latest version package
+conda activate <env-name>	: Activate a virtual environment
+conda deactivate		: Deactivate a virtual environment
+conda list	: List all packages installed into current virtual environment
+conda list <package-name>	: Show package details
+conda update <package-name>	: Update the package to latest version
+conda install <package-name=version>	: Update or install the package in specific version
+conda create --name <new-name> --copy --clone <old-name>	: Update the environment name
+conda remove <package-name>	: Remove a package
+conda env remove --name <env-name>	: Remove a virtual environment
+conda install --channel <channel-name> <package>	: Install a package from a specific channel
+conda list --revision	: List a all revisions (version)
+conda install --revision <revision-num>	: Return to a specific revision (revision)
+conda env export	: List channels and all packages installed on the current virtual environment
+conda env export --no-builds	: List the channels and all packages installed without builds
+conda env export --from-history	: List the channels and packages specific manualy by us
+conda env export --from-history --file environment.yml	: Create a file (environment.yml) with channels and packages with our current configuration
+conda env create --file environment.yml	: Create a environment from a file
+conda config --add channels <channel-name>	: Add a new channel for conda (this should be added into base environment)
+
+
+## Mamba
+conda install --channel conda-forge mamba	: Install mamba from conda-forge channel
+mamba help	: Print the help
+mamba env create --file environment.yml	: Create a new environment from a file
+
