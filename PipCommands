@@ -4,17 +4,28 @@
 sudo pacman -Sy python-pip
 
 ## Ubuntu/Debian
-sudp apt install python3-pip
+sudo apt install python3-pip
 
+## INSTALL PACKAGE FOR VIRTUAL ENVIRONMENT
+sudo apt install python3-venv 
+
+## CREATE A VIRTUAL ENVIRONMENT
+python3 -m venv <env-name> 		: Create a new virtual environment
+source <env-name>/bin/activate		: Activate the virtual environment
+which python				: Show what environment is activated
+deactivate				: Exit from virtual environment
 
 ## COMMANDS FOR PIP
 
 pip search <package-name>		: Search a package
 pip install <package-name>		: Install a package
+pip install <package-name>==<version>	: Install packages with specific version
 pip show <package-name>			: Show details of package instaled
 pip uninstall <package-name>		: Unistall a package
 pip list				: Return a list with packages instaled on actual virtual enviroment
-pip freeze				: Freez the packages and actual version
+pip freeze				: Freez the packages in this virtual environment
+pip freeze > requirements.txt		: Create a file with requirements for the project
+pip install -r requirements.txt		: Install all packages for this project
 
 ## PIP PACKAGES
 pip install jupyter_contrib_nbextensions: Extensions for jupyter notebook
