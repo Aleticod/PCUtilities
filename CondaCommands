@@ -1,5 +1,6 @@
 ## Conda
 conda env list		: Show all virtual environments
+conda update -n base -c defaults conda	: Update conda to the latest version
 conda create --name <env-name>	: Create a new virtual environment
 conda create --name <env-name> <package-name = version>	: Create a new virtual environment with package (python=3.9)
 conda create --name <env-name> <package-name>	: Create a new environment with latest version package
