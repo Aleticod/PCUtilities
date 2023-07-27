@@ -1,0 +1,10 @@
+## NODE INSTALATION
+download nodejs LTS         : Search on navigator nodejs download (Windows), this install node and npm
+
+## NPM INSTALLATION
+Installing npm we need one of the version of nodejs must be installed to run (14.x.x >= 14.17.0, 16.x.x >= 16.13.0 or higher 18.0.0)
+curl -qL https://www.npmjs.com/install.sh | sh  : Direct download from npmjs.com
+npm install -g npm@latest                       : Update to last version of npm
+## NVM (NODE VERSION MANAGERS)
+If you are looking to manage multiple version of Node.js &/or npm, consider using node version managers https://github.com/nvm-sh/nvm
+
