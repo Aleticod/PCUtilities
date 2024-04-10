@@ -1,0 +1,19 @@
+docker build .          # Create a image from docker file
+docker images           # List all images into local
+docker rmi -f image_ID  # Force remove a specific image
+docker build -t name:version .    # Create a image form docker file with image name and version
+docker images --filter=reference='*:1.0'	# Search a specific image with contains '1.0'
+docker images --no-trunc	# List all images with all image ID
+docker image tag name:version new_name:new_version	# Copy a new image from existing image
+docker image prune	# Remove all unused images
+docker run --name <container_name> <image_name>	# Run a new container from especific image
+docker run -p <host_port>:<container_port> <image_name>	# Create a new container on specific port
+docker run -d <image_container>	# Execute a container on background
+docker run -it --rm -d -p 8080:80 --name web image_name	# Create a new container from specific image
+docker stop container_id	# Stop a specific container
+docker start container_id	# Start a specific container
+docker stats	# Show all stats
+docker rm <container_name>	# Remove a specific container
+docker exec -it <container_name> sh	# Execute a container with shell
+docker logs -f <container_name>		# Show container logs
+
